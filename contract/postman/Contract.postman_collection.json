@@ -1,0 +1,966 @@
+{
+	"info": {
+		"_postman_id": "8b284370-2b6f-4cb4-bd23-d8fdcb6915e6",
+		"name": "Contract",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14573581"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://www.heiratsvertrag-ig-oldenburg.de/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"www",
+								"heiratsvertrag-ig-oldenburg",
+								"de"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@admin.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jan 2023 15:34:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jan 2023 15:34:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"successfully\",\n    \"errors\": null,\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"admin\",\n        \"last_name\": \"user\",\n        \"email\": \"admin@admin.com\",\n        \"email_verified_at\": null,\n        \"role_id\": 1,\n        \"created_at\": \"2023-01-07T15:34:07.000000Z\",\n        \"updated_at\": \"2023-01-07T15:34:07.000000Z\"\n    },\n    \"token\": \"1|MCABHi4xWoxBh3TuADN1x7EwSmtyVSRat33MOH93\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "first name",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "last name",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "first name",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "last name",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "user@email.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/auth/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jan 2023 15:39:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jan 2023 15:39:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"successfully\",\n    \"errors\": null,\n    \"data\": {\n        \"first_name\": \"first name\",\n        \"last_name\": \"last name\",\n        \"email\": \"user@email.com\",\n        \"role_id\": 3,\n        \"updated_at\": \"2023-01-07T15:39:12.000000Z\",\n        \"created_at\": \"2023-01-07T15:39:12.000000Z\",\n        \"id\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "verified",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ForgetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/forget-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "7cb95a375900edb1ac39492af66d9df50a48e4bb9bdba7e7e78ba55dbe797cbc",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/reset-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|S7WUO8194rtTC2PS2Z4YF8b0qPYZs7mL2DNciCRN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "P",
+									"description": "optional params ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/contracts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"contracts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|S7WUO8194rtTC2PS2Z4YF8b0qPYZs7mL2DNciCRN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contract_id",
+									"value": "14",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/contracts/show",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"contracts",
+								"show"
+							],
+							"query": [
+								{
+									"key": "contract_id",
+									"value": "14",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|S7WUO8194rtTC2PS2Z4YF8b0qPYZs7mL2DNciCRN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contract_id",
+									"value": "14",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "A",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/contracts/status",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"contracts",
+								"status"
+							],
+							"query": [
+								{
+									"key": "contract_id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|S7WUO8194rtTC2PS2Z4YF8b0qPYZs7mL2DNciCRN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contract_id",
+									"value": "16",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/contracts/destroy",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"contracts",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activity Log",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|S7WUO8194rtTC2PS2Z4YF8b0qPYZs7mL2DNciCRN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/admin/activity/log",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"activity",
+								"log"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atatistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|EvVB0P9FxRHXEepNEFyBzRTQqhRcBOasgmHPNa8o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/admin/home",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List-By-Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|iHFsZjLKAHLXmWNh8IGbv17NhhgcgRAR7uVVhhin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/admin/contracts/list?status=Accepted",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"contracts",
+								"list"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Accepted"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User - Applicant",
+			"item": [
+				{
+					"name": "Create Application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|VmStPBuCW44LNeHzVNuUbXXngFVyxogmyzvzcQKb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"quran_date\" : \"2023-01-08\",\r\n   \"is_mosque\" :\"0\",\r\n    \"quran_address\" : \"kjlkjlk\",\r\n  \"data\": [\r\n    {\r\n      \"type\": \"husband\",\r\n      \"email\":\"husbandjxxs@yahoo.com\",\r\n      \"first_name\": \"husband\",\r\n      \"last_name\": \"husband\",\r\n      \"middle_name\": \"husband\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\",\r\n      \"marital_status\":\"single\"\r\n    },\r\n     {\r\n      \"type\": \"wife\",\r\n      \"first_name\": \"wife\",\r\n      \"last_name\": \"wife\",\r\n      \"middle_name\": \"wife\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"marital_status\":\"single\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\"\r\n      \r\n    },\r\n     {\r\n      \"type\": \"first_witness\",\r\n      \"first_name\": \"first_witness\",\r\n      \"last_name\": \"first_witness\",\r\n      \"middle_name\": \"first_witness\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\"\r\n      \r\n    },\r\n     {\r\n      \"type\": \"second_witness\",\r\n      \"first_name\": \"second_witness\",\r\n      \"last_name\": \"second_witness\",\r\n      \"middle_name\": \"second_witness\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\"\r\n      \r\n    },\r\n    {\r\n      \"type\": \"agent\",\r\n      \"first_name\": \"agent\",\r\n      \"last_name\": \"agent\",\r\n      \"middle_name\": \"agent\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\",\r\n      \"kinship_degree\": \"father\"\r\n    }\r\n\r\n  ]\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.heiratsvertrag-ig-oldenburg.de/api/user/contracts/create",
+							"protocol": "http",
+							"host": [
+								"api",
+								"heiratsvertrag-ig-oldenburg",
+								"de"
+							],
+							"path": [
+								"api",
+								"user",
+								"contracts",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|hFBV0imRsRveFS8Sm4xtQ12VnZUJB6DUEJiurIqH",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"quran_date\" : \"2023-03-08\",\r\n   \"is_mosque\" :\"0\",\r\n    \"quran_address\" : \"updated\",\r\n    \"husbandFront\" : \"63dd0fc10533a-1675431873\",\r\n    \"husbandBack\" : \"63dd0fd640376-1675431894\",\r\n    \"wifeFront\" : \"63dd0fed18a3f-1675431917\",\r\n    \"wifeBack\" : \"63dd100f0070a-1675431951\",\r\n    \"firstWitnessFront\" : \"63dd10297196c-1675431977\",\r\n    \"firstWitnessBack\" : \"63dd10385ae1a-1675431992\",\r\n    \"secondWitnessFront\" : \"63dd104d4dcd5-1675432013\",\r\n    \"secondWitnessBack\" : \"63dd105c015b3-1675432028\",\r\n    \"agentFront\" : \"63dd106c2cb1a-1675432044\",\r\n    \"agentBack\" : \"63dd107c2b4ea-1675432060\",\r\n  \"data\": [\r\n    {\r\n      \"type\": \"husband\",\r\n      \"email\":\"updatexxx@yahoo.com\",\r\n      \"first_name\": \"husband\",\r\n      \"last_name\": \"husband\",\r\n      \"middle_name\": \"husband\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\",\r\n      \"marital_status\":\"single\"\r\n    },\r\n     {\r\n      \"type\": \"wife\",\r\n      \"first_name\": \"wife\",\r\n      \"last_name\": \"wife\",\r\n      \"middle_name\": \"wife\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"marital_status\":\"single\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\"\r\n      \r\n    },\r\n     {\r\n      \"type\": \"first_witness\",\r\n      \"first_name\": \"first_witness\",\r\n      \"last_name\": \"first_witness\",\r\n      \"middle_name\": \"first_witness\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\"\r\n      \r\n    },\r\n     {\r\n      \"type\": \"second_witness\",\r\n      \"first_name\": \"second_witness\",\r\n      \"last_name\": \"second_witness\",\r\n      \"middle_name\": \"second_witness\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\"\r\n      \r\n    },\r\n    {\r\n      \"type\": \"agent\",\r\n      \"first_name\": \"agent\",\r\n      \"last_name\": \"agent\",\r\n      \"middle_name\": \"agent\",\r\n       \"birth_date\": \"2023-01-08\",\r\n      \"birth_place\": \"egypte\",\r\n      \"nationality\": \"egyptian\",\r\n       \"profession\": \"string\",\r\n      \"address\": \"dkjdfkj\",\r\n      \"phone_number\": \"0100\",\r\n      \"kinship_degree\": \"father\"\r\n    }\r\n\r\n  ]\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/contracts/update/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"contracts",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadImages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|5yky531eQBSkGOA7BfDgKyfEAY0ViN4UOXWI6FYN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image[0]",
+									"type": "file",
+									"src": "/D:/iti/assi.PNG"
+								},
+								{
+									"key": "image[1]",
+									"type": "file",
+									"src": "/D:/iti/check.PNG"
+								},
+								{
+									"key": "image[3]",
+									"type": "file",
+									"src": "/D:/iti/check.PNG"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/contracts/upload/images/27",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"contracts",
+								"upload",
+								"images",
+								"27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Language",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|nsaTYtfjTXllKSkmcky0FqO44mKf5VseIhdU50pk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lang",
+									"value": "de",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/language/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"language",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sheikh",
+			"item": [
+				{
+					"name": "UpdateData",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|j6mAa7wrFeqTh1pmg9aw4wSTbSBk7haOjekq3uMS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quran_date\" : \"2023-04-08\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/contracts/update/date/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"contracts",
+								"update",
+								"date",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "calender",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
