@@ -17,9 +17,10 @@ class SendVerificationMail extends Notification
      * Create a new notification instance.
      * @param $code
      */
-    public function __construct($code)
+    public function __construct($code, $email)
     {
         $this->code = $code;
+        $this->email = $email;
     }
 
     /**
@@ -44,7 +45,7 @@ class SendVerificationMail extends Notification
         return (new MailMessage)
                     ->greeting(" ")
                     ->line(__('api.Please_use_the_following_code_to_verify_your_mail'))
-                    ->line($this->code)
+                    ->line(url('/auth/verify') . '/?pin_code=' . $this->code . '&email')
                     ->line( __('api.Thank_for_using_our_application!'));
 
     }

@@ -93,8 +93,8 @@ class AuthController extends Controller
      */
     public function verifiedEmail(PinCodeRequest $request)
     {
-        $email= $request->post('email');
-        $code= $request->post('pin_code');
+        $email= $request->get('email');
+        $code= $request->get('pin_code');
 
         $data= Verification::query()->whereHas('user',function($query) use($email) {
             $query->whereEmail($email);

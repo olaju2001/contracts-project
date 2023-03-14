@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'auth','middleware' => 'setlocale'], function (){
     Route::post('register', [AuthController::class, 'register']);
     Route::post('login', [AuthController::class, 'login']);
-    Route::post('/verify', [AuthController::class , 'verifiedEmail']);
+    Route::get('/verify', [AuthController::class , 'verifiedEmail']);
     Route::post('/forget-password' , [AuthController::class , 'forgetPassword'])
         ->name('user.forget-password');
 

@@ -37,7 +37,7 @@ class SendVerificationMailJob implements ShouldQueue
         $user   = $this->createCode($userId);
         $code   = $user->pin_code;
 
-        $this->user->notify(new SendVerificationMail($code));
+        $this->user->notify(new SendVerificationMail($code, $user->email));
     }
 
     /**
@@ -46,8 +46,12 @@ class SendVerificationMailJob implements ShouldQueue
      */
     public function createCode($userId)
     {
-        $code = rand(100000, 999999);
-
+        // generating a random code with length of 64 characters
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $code = '';
+        for ($i = 0; $i < 64; $i++) {
+            $code .= $characters[rand(0, strlen($characters) - 1)];
+        }
         return Verification::create([
             'user_id'  => $userId,
             'pin_code' => $code,
