@@ -37,7 +37,7 @@ class SendVerificationMailJob implements ShouldQueue
         $user   = $this->createCode($userId);
         $code   = $user->pin_code;
 
-        $this->user->notify(new SendVerificationMail($code, $user->email));
+        $this->user->notify(new SendVerificationMail($code, $this->user->email));
     }
 
     /**

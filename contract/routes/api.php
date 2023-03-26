@@ -51,7 +51,6 @@ Route::group(['prefix' => 'admin','middleware' => ['auth:sanctum','setlocale']],
 });
 
 Route::group(['middleware' => ['auth:sanctum','setlocale'], 'prefix' => 'user'], function (){
-
     Route::post('contracts/create', [ContractController::class, 'create']);
     Route::put('contracts/update/{id}', [ContractController::class, 'update']);
     Route::post('language/update', [ContractController::class, 'updateLanguage']);

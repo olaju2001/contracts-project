@@ -6,12 +6,14 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\HtmlString;
 
 class SendVerificationMail extends Notification
 {
     use Queueable;
 
     private $code;
+    private $email;
 
     /**
      * Create a new notification instance.
@@ -45,7 +47,7 @@ class SendVerificationMail extends Notification
         return (new MailMessage)
                     ->greeting(" ")
                     ->line(__('api.Please_use_the_following_code_to_verify_your_mail'))
-                    ->line(url('/auth/verify') . '/?pin_code=' . $this->code . '&email')
+                    ->line(new HtmlString('<a href="' . url('/api/auth/verify') . '/?pin_code=' . $this->code . '&email=' . $this->email . '">click here to verify your email</a>'))
                     ->line( __('api.Thank_for_using_our_application!'));
 
     }

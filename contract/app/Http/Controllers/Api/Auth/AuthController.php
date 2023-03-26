@@ -9,6 +9,7 @@ use App\Traits\ApiResponseTrait;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\ForgetPassword;
 use App\Http\Requests\ResetPasswordRequest;
@@ -91,7 +92,7 @@ class AuthController extends Controller
      * @param PinCodeRequest $request
      * @return Application|ResponseFactory|Response
      */
-    public function verifiedEmail(PinCodeRequest $request)
+    public function verifiedEmail(Request $request)
     {
         $email= $request->get('email');
         $code= $request->get('pin_code');
@@ -110,7 +111,7 @@ class AuthController extends Controller
 
                 $user->update(['email_verified_at' => Carbon::now()]);
                 $token = $user->createToken('token')->plainTextToken;
-                return $this->apiResponse(__('api.successfully_verified'), $user, null,  200 , $token);
+                return redirect(config('app.front_url'));
             }
 
             return $this->apiResponse(__('api.error_code'), null, 'error code', 422);

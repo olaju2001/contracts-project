@@ -54,7 +54,7 @@ return [
 
     'url' => env('APP_URL', 'http://api.heiratsvertrag-ig-oldenburg.de/'),
 
-    'front_url' => env('FRONT_URL','http://front.heiratsvertrag-ig-oldenburg.de/'),
+    'front_url' => env('FRONT_URL','http://35.86.112.218:3000/'),
 
     'asset_url' => env('ASSET_URL', null),
 
