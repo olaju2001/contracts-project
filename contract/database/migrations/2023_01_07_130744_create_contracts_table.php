@@ -18,6 +18,9 @@ class CreateContractsTable extends Migration
             $table->dateTime('quran_date');
             $table->enum('is_mosque', [0, 1]);
             $table->string('quran_address');
+            $table->decimal('deferred_dowry');
+            $table->decimal('prompt_dower');
+            $table->text('terms');
 
             $table->enum('status', ['P', 'A', 'R','C'])
                 ->default('P')

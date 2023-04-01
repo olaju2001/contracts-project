@@ -133,7 +133,11 @@ class ContractController extends Controller
             'quran_date' => $request->post('quran_date'),
             'is_mosque' => $request->post('is_mosque'),
             'quran_address' => $request->post('quran_address'),
-            'user_id' => Auth::id()
+            'deferred_dowry' => $request->post('deferred_dowry'),
+            'prompt_dower' => $request->post('prompt_dower'),
+            'terms' => $request->post('terms'),
+            'user_id' => Auth::id(),
+
         ]);
 
         $contract->persons()->saveMany($array);
