@@ -140,6 +140,8 @@ class ContractController extends Controller
 
         ]);
 
+        dd($contract['deferred_dowry']);
+
         $contract->persons()->saveMany($array);
 
         $this->prepareFiles($contract, $request);  // upload all files
