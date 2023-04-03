@@ -42,8 +42,8 @@ class ContractRequest extends FormRequest
         $roles = [
             'contract_id'                    => 'sometimes|exists:contracts,id',
             'quran_date'                     => ['required', 'date', 'after:today'],
-            'deferred_dowry'                 => ['required', 'number'],
-            'prompt_dower'                   => ['required', 'number'],
+            'deferred_dowry'                 => ['required', 'numeric'],
+            'prompt_dower'                   => ['required', 'numeric'],
             'terms'                          => 'required',
             'is_mosque'                      => 'required',
             'quran_address'                  => 'required',
