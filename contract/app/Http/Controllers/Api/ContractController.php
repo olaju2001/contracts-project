@@ -129,7 +129,6 @@ class ContractController extends Controller
 
         DB::beginTransaction();
 
-        dd($request->post('deferred_dowry'));
 
         $contract = $this->contractModel->create([
             'quran_date' => $request->post('quran_date'),
@@ -139,7 +138,6 @@ class ContractController extends Controller
             'prompt_dower' => $request->post('prompt_dower'),
             'terms' => $request->post('terms'),
             'user_id' => Auth::id(),
-
         ]);
 
 
