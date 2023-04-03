@@ -27,7 +27,7 @@ class CreateContractPeopleTable extends Migration
             $table->text('address');
             $table->string('phone_number');
             $table->enum('type', ['husband', 'wife', 'first_witness', 'second_witness', 'agent']);
-            $table->enum('kinship_degree',['father','brother','uncle','grand_father','other']) ->nullable();
+            $table->string('kinship_degree')->nullable();
 
             $table->foreignId('contract_id')
                 ->constrained()
