@@ -129,6 +129,8 @@ class ContractController extends Controller
 
         DB::beginTransaction();
 
+        dd($request->post('deferred_dowry'));
+
         $contract = $this->contractModel->create([
             'quran_date' => $request->post('quran_date'),
             'is_mosque' => $request->post('is_mosque'),
@@ -140,7 +142,6 @@ class ContractController extends Controller
 
         ]);
 
-        dd($contract['deferred_dowry']);
 
         $contract->persons()->saveMany($array);
 
