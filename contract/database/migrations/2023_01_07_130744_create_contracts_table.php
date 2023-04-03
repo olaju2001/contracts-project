@@ -16,7 +16,7 @@ class CreateContractsTable extends Migration
         Schema::create('contracts', function (Blueprint $table) {
             $table->id();
             $table->dateTime('quran_date');
-            $table->enum('is_mosque', [0, 1])->default(0);
+            $table->boolean('is_mosque')->default(0);
             $table->string('quran_address');
             $table->decimal('deferred_dowry');
             $table->decimal('prompt_dower');
