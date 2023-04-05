@@ -16,7 +16,7 @@
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost',
-    'front_url' => 'http://35.86.112.218:3000/',
+    'front_url' => 'https://heiratsvertrag-ig-oldenburg.de/',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
