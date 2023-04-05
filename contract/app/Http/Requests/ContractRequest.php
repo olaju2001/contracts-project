@@ -46,7 +46,7 @@ class ContractRequest extends FormRequest
             'prompt_dower'                   => ['required', 'numeric'],
             'terms'                          => 'required',
             'is_mosque'                      => 'required',
-            'quran_address'                  => 'required',
+            'quran_address'                  => 'nullable',
             'data'                           => 'required|array',
             'data[*][type]'                  => ['required'],
             'data.*.first_name'              => ['required'],
