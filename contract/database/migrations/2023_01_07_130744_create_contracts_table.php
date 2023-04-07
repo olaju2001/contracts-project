@@ -17,7 +17,7 @@ class CreateContractsTable extends Migration
             $table->id();
             $table->dateTime('quran_date');
             $table->boolean('is_mosque')->default(0);
-            $table->string('quran_address');
+            $table->string('quran_address')->nullable();
             $table->decimal('deferred_dowry');
             $table->decimal('prompt_dower');
             $table->text('terms');
