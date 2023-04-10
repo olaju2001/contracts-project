@@ -462,6 +462,18 @@ class ContractController extends Controller
                 $data['is_mosque']                 = $contract->is_mosque;
                 $data['quran_address']                = $contract->quran_address;
 
+                Pdf::setPaper('A4', 'portrait');
+                // Set the encoding to UTF-8
+                Pdf::setOptions([
+                    'isFontSubsettingEnabled' => true,
+                    'isHtml5ParserEnabled' => true,
+                    'isPhpEnabled' => true,
+                    'isRemoteEnabled' => true,
+                    'isJavascriptEnabled' => true,
+                    'isHtml5ParserEnabled' => true,
+                    'isCssFloatEnabled' => true,
+                    'isUnicodeEnabled' => true,
+                ]);
                 $pdf = Pdf::loadView('pdf.contract',['data'=>$data,'array'=>$array]);
 
                 if (ob_get_length() > 0) { ob_end_clean(); }
