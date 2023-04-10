@@ -473,6 +473,7 @@ class ContractController extends Controller
                     'isHtml5ParserEnabled' => true,
                     'isCssFloatEnabled' => true,
                     'isUnicodeEnabled' => true,
+                    'defaultFont' => 'arial',
                 ]);
                 $pdf = Pdf::loadView('pdf.contract',['data'=>$data,'array'=>$array]);
 
