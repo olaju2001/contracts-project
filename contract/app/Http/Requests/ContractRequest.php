@@ -107,22 +107,22 @@ class ContractRequest extends FormRequest
       public function messages(): array
       {
           return [
-              'quran_date.required' => __("api.required"),
-              'is_mosque.required' => __("api.required"),
-              'data.*.first_name.required' => __("api.required"),
-              'data.*.last_name.required' => __("api.required"),
-              'data.*.email.required' => __("api.required"),
-              'data.*.birth_date.required' => __("api.required"),
-              'data.*.nationality.required' => __("api.required"),
-              'data.*.profession.required' => __("api.required"),
-              'husbandFront.required' => __("api.required"),
-              'husbandBack.required' => __("api.required"),
-              'wifeFront.required' => __("api.required"),
-              'wifeBack.required' => __("api.required"),
-              'firstWitnessFront.required' => __("api.required"),
-              'secondWitnessBack.required' => __("api.required"),
-              'agentFront.required' => __("api.required"),
-              'agentBack.required' => __("api.required"),
+              'quran_date.required' => __("validation.required"),
+              'is_mosque.required' => __("validation.required"),
+              'data.*.first_name.required' => __("validation.required"),
+              'data.*.last_name.required' => __("validation.required"),
+              'data.*.email.required' => __("validation.required"),
+              'data.*.birth_date.required' => __("validation.required"),
+              'data.*.nationality.required' => __("validation.required"),
+              'data.*.profession.required' => __("validation.required"),
+              'husbandFront.required' => __("validation.required"),
+              'husbandBack.required' => __("validation.required"),
+              'wifeFront.required' => __("validation.required"),
+              'wifeBack.required' => __("validation.required"),
+              'firstWitnessFront.required' => __("validation.required"),
+              'secondWitnessBack.required' => __("validation.required"),
+              'agentFront.required' => __("validation.required"),
+              'agentBack.required' => __("validation.required"),
           ];
       }
 
