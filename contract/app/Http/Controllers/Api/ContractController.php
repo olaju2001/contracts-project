@@ -109,7 +109,7 @@ class ContractController extends Controller
      */
     public function create(ContractRequest $request)
     {
-        echo app()->getLocale();
+        dd(app()->getLocale());
         // please make that in validation
         $contractCheck = $this->contractModel->where('user_id',Auth::id())->first();
 
