@@ -108,7 +108,8 @@ class ContractRequest extends FormRequest
       {
         
           return [
-              'quran_date.required' => __("validation.required"),
+            'quran_date.required' => __("validation.required"),
+            'quran_date.after:today' => __("quran_date.after:today"),
               'is_mosque.required' => __("validation.required"),
               'data.*.first_name.required' => __("validation.required"),
               'data.*.last_name.required' => __("validation.required"),
