@@ -24,6 +24,23 @@ use App\Http\Resources\ContractResource;
 use App\Http\Resources\QuranDateResource;
 use Illuminate\Support\Facades\File;
 use Barryvdh\DomPDF\Facade\Pdf;
+
+
+
+function reverse_leaf_values(array $array): array
+{
+    foreach ($array as $key => $value) {
+        if (is_array($value)) {
+            $array[$key] = reverse_leaf_values($value);
+        } else {
+            $array[$key] = strrev($value);
+        }
+    }
+    
+    return $array;
+}
+
+
 /**
  * @author Ahmed Mohamed
  */
@@ -462,6 +479,7 @@ class ContractController extends Controller
                 $data['is_mosque']                 = $contract->is_mosque;
                 $data['quran_address']                = $contract->quran_address;
 
+                reverse_leaf_values($array);
 
                 $pdf = Pdf::loadView('pdf.contract',['data'=>$data,'array'=>$array]);
                 $pdf->setPaper('A4', 'portrait');
@@ -476,6 +494,8 @@ class ContractController extends Controller
                     'isUnicodeEnabled' => true,
                     'defaultFont' => 'arial',
                 ]);
+                
+
                 if (ob_get_length() > 0) { ob_end_clean(); }
 
 
