@@ -15,4 +15,7 @@ jobs:
 
     - name: Connect to SSH server and update the project
       run: |
-        sshpass -p Jood2023 ssh root@85.214.222.77 "cd /var/www/vhosts/heiratsvertrag-ig-oldenburg.de/api.heiratsvertrag-ig-oldenburg.de/contracts-project && git pull origin main" < <(echo -e "protocol=https\nhost=github.com\nusername=hrr2000\npassword=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")
+        sshpass -p "Jood2023" ssh root@85.214.222.77 "cd /var/www/vhosts/heiratsvertrag-ig-oldenburg.de/api.heiratsvertrag-ig-oldenburg.de/contracts-project && git pull https://hrr2000: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@github.com/olaju2001/contracts-project.git main"
+        
+        
+        
