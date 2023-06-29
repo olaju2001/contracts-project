@@ -6,8 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
+      @import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
       @if(app()->getLocale() == 'ar')
-        *{ font-family: DejaVu Sans, sans-serif;direction: rtl; text-align: right; }
+      
+        *{ font-family: 'Droid Arabic Naskh', serif; direction: rtl; text-align: right; }
       @endif
         .table{
             width: 100%;
