@@ -107,7 +107,6 @@ class ContractRequest extends FormRequest
       public function messages(): array
       {
         
-        dd(['locale' => app()->getLocale(), 'message' => __("validation.required")]);
           return [
               'quran_date.required' => __("validation.required"),
               'is_mosque.required' => __("validation.required"),
