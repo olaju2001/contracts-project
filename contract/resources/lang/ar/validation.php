@@ -156,7 +156,7 @@ return [
       'is_mosque' => 'فى المسجد'
     ],
 
-    'dates' => [
+    'date' => [
       'today' => 'اليوم'
     ]
 
