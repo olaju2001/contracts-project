@@ -152,7 +152,8 @@ return [
     'attributes' => [
       'email' => 'البريد الإلكترونى',
       'today' => 'اليوم',
-      'quran_date' => 'تاريخ القران'
+      'quran_date' => 'تاريخ القران',
+      'is_mosque' => 'فى المسجد'
     ],
 
 ];
