@@ -26,7 +26,6 @@ class setLocale
             app()->setLocale('en');
           }
       }
-        dd(app()->getLocale());
         if ($request->wantsJson()) {
             // if (in_array(request()->header('Lang'), ['ar', 'de'])) {
             //     app()->setLocale(request()->header('Lang'));
