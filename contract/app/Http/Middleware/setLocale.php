@@ -16,17 +16,25 @@ class setLocale
      */
     public function handle(Request $request, Closure $next)
     { 
-
         if ($request->wantsJson()) {
-
-            if (in_array(request()->header('Lang'), ['ar', 'de'])) {
-                app()->setLocale(request()->header('Lang'));
-            } elseif (auth('api')->check()) {
-                $lang = auth('api')->user()->lang ?? 'ar';
-                app()->setLocale($lang);
-            } else {
-                app()->setLocale('ar');
+            $locale = $request->server('HTTP_ACCEPT_LANGUAGE');
+      
+            if ($locale) {
+                $locale = substr($locale, 0, 2);
+                if (in_array($locale, ['en', 'ar', 'de'])) {
+                  app()->setLocale($locale);
+                } else {
+                  app()->setLocale('en');
+                }
             }
+            // if (in_array(request()->header('Lang'), ['ar', 'de'])) {
+            //     app()->setLocale(request()->header('Lang'));
+            // } elseif (auth('api')->check()) {
+            //     $lang = auth('api')->user()->lang ?? 'ar';
+            //     app()->setLocale($lang);
+            // } else {
+            //     app()->setLocale('ar');
+            // }
         }
         return $next($request);
     }
