@@ -6,9 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        body {
-            font-family: DejaVu Sans, sans-serif;
-        }
+        *{ font-family: DejaVu Sans, sans-serif;direction: rtl; }
         .table{
             width: 100%;
         }
@@ -29,9 +27,9 @@
         }
     </style>
 </head>
-<body dir="rtl">
+<body>
     <h5>husband Information</h5>
-    <p style="direction: rtl;"> First Name : {{$array[0]['client_information']['first_name']}}</p>
+    <p> First Name : {{$array[0]['client_information']['first_name']}}</p>
     <p> Email : {{$array[0]['client_information']['email']}}</p>
     <p> Birth date : {{$array[0]['client_information']['birth_date']}}</p>
     <p> Birth Place : {{$array[0]['client_information']['birth_place']}}</p>
