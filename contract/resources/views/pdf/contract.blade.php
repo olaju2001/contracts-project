@@ -9,7 +9,9 @@
       @import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
       @if(app()->getLocale() == 'ar')
       
-        *{ font-family: 'Droid Arabic Naskh', serif; direction: rtl; text-align: right; }
+        *{ 
+          font-family: 'Droid Arabic Naskh', Arial, sans-serif;
+         }
       @endif
         .table{
             width: 100%;
