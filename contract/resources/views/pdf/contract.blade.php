@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="@if(app()->getLocale() == 'ar') rtl @else ltr @endif" lang="{{ app()->getLocale() }}">
+<html dir="rtl" lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="UTF-8">
