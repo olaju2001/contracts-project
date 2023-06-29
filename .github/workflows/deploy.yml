@@ -30,7 +30,7 @@ jobs:
       run: git pull https://hrr2000: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@github.com/olaju2001/contracts-project.git main
         
     - name: Clear Laravel cache
-      run: php artisan cache:clear && php artisan config:clear && php artisan route:clear
+      run: cd contract && php artisan cache:clear && php artisan config:clear && php artisan route:clear
      
         
         
