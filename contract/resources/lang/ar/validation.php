@@ -119,6 +119,7 @@ return [
     'uploaded' => 'فشل تحميل الملف :attribute.',
     'url' => 'يجب أن يكون :attribute عنوان URL صالحًا.',
     'uuid' => 'يجب أن يكون :attribute UUID صالحًا.',
+    'today' => 'اليوم',
     
 
     /*
@@ -151,7 +152,6 @@ return [
 
     'attributes' => [
       'email' => 'البريد الإلكترونى',
-      'today' => 'اليوم',
       'quran_date' => 'تاريخ القران',
       'is_mosque' => 'فى المسجد'
     ],
