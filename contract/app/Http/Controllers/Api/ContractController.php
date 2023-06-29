@@ -479,7 +479,7 @@ class ContractController extends Controller
                 $data['is_mosque']                 = $contract->is_mosque;
                 $data['quran_address']                = $contract->quran_address;
 
-                reverse_leaf_values($array);
+                $array = reverse_leaf_values($array);
 
                 $pdf = Pdf::loadView('pdf.contract',['data'=>$data,'array'=>$array]);
                 $pdf->setPaper('A4', 'portrait');
