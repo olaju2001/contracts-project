@@ -24,14 +24,7 @@ jobs:
         
     - name: Connect to SSH server and update the project
       run: |
-        sshpass -p "Jood2023" ssh -tv root@85.214.222.77 "cd /var/www/vhosts/heiratsvertrag-ig-oldenburg.de/api.heiratsvertrag-ig-oldenburg.de/contracts-project"
-        
-    - name: Pull updates
-      run: git pull https://hrr2000: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@github.com/olaju2001/contracts-project.git main
-        
-    - name: Clear Laravel cache
-      run: cd contract && php artisan cache:clear && php artisan config:clear && php artisan route:clear
-     
+        sshpass -p "Jood2023" ssh -tv root@85.214.222.77 "cd /var/www/vhosts/heiratsvertrag-ig-oldenburg.de/api.heiratsvertrag-ig-oldenburg.de/contracts-project && git pull https://hrr2000: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@github.com/olaju2001/contracts-project.git main && cd contract && php artisan cache:clear && php artisan config:clear && php artisan route:clear"
         
         
         
