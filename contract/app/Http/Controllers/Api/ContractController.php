@@ -24,6 +24,8 @@ use App\Http\Resources\ContractResource;
 use App\Http\Resources\QuranDateResource;
 use Illuminate\Support\Facades\File;
 use Barryvdh\DomPDF\Facade\Pdf;
+use ArPHP\I18N\Arabic;
+
 /**
  * @author Ahmed Mohamed
  */
@@ -464,26 +466,32 @@ class ContractController extends Controller
 
 
                 $pdf = Pdf::loadView('pdf.contract',['data'=>$data,'array'=>$array]);
-                $pdf->setPaper('A4', 'portrait');
+                $pdfContent = $pdf->output();
+                // $pdf->setPaper('A4', 'portrait');
                 // Set the encoding to UTF-8
-                $pdf->setOptions([
-                    'isFontSubsettingEnabled' => true,
-                    'isPhpEnabled' => true,
-                    'isRemoteEnabled' => true,
-                    'isJavascriptEnabled' => true,
-                    'isHtml5ParserEnabled' => true,
-                    'isCssFloatEnabled' => true,
-                    'isUnicodeEnabled' => true,
-                    'defaultFont' => 'arial',
-                ]);
+                // $pdf->setOptions([
+                //     'isFontSubsettingEnabled' => true,
+                //     'isPhpEnabled' => true,
+                //     'isRemoteEnabled' => true,
+                //     'isJavascriptEnabled' => true,
+                //     'isHtml5ParserEnabled' => true,
+                //     'isCssFloatEnabled' => true,
+                //     'isUnicodeEnabled' => true,
+                //     'defaultFont' => 'arial',
+                // ]);
                 
                 if (ob_get_length() > 0) { ob_end_clean(); }
 
 
-                $pdf->save(storage_path().'\app\public\filename.pdf');
+                // $pdf->save(storage_path().'\app\public\filename.pdf');
 
                 // $contract->addMedia(storage_path().'\app\public\filename.pdf')->toMediaCollection();
-                return $pdf->download('pdfview.pdf');
+                $arabic = new Arabic();
+                $pdfContent = $arabic->utf8Glyphs($pdfContent);
+                return $pdf->download('pdfview.pdf', $pdfContent);
+                // return $pdf->download('pdfview.pdf');
+
+                
                 // File::delete(storage_path().'\app\public\filename.pdf');
 
                 // return [
