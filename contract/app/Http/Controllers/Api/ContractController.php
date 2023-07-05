@@ -35,6 +35,7 @@ function convertArrayValuesToArabic($array)
             $array[$key] = convertArrayValuesToArabic($value);
         } else {
             $array[$key] = $arabic->utf8Glyphs($value);
+            $array[$key] = implode('', array_reverse(preg_split('//u', $array[$key], -1, PREG_SPLIT_NO_EMPTY)));
         }
     }
     
