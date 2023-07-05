@@ -34,13 +34,17 @@
             word-break: break-all;
             word-break: break-word;
         }
+        .head {
+          font-weight: bold;
+          font-size: 18px;
+        }
     </style>
 </head>
 <body>
 
   
-    <h5>{{ $texts['Husband Information'] }}</h5>
-    <p> الاسم الأول : {{$array[0]['client_information']['first_name']}}</p>
+    <p class="head">{{ __('api.Husband Information') }}</p>
+    <p> First Name : {{$array[0]['client_information']['first_name']}}</p>
     <p> Email : {{$array[0]['client_information']['email']}}</p>
     <p> Birth date : {{$array[0]['client_information']['birth_date']}}</p>
     <p> Birth Place : {{$array[0]['client_information']['birth_place']}}</p>
