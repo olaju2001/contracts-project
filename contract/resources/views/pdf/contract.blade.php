@@ -14,6 +14,7 @@
         *{ 
           font-family: DejaVu Sans, sans-serif !important;
           direction: rtl;
+          text-align: right;
          }
       @endif
         .table{
@@ -43,7 +44,7 @@
 <body>
 
   
-  <p class="head">{{ __('api.Husband Information') }}</p>
+<p class="head">{{ __('api.Husband Information') }}</p>
 <p>{{ __('api.First Name') }} : {{$array[0]['client_information']['first_name']}}</p>
 <p>{{ __('api.Email') }} : {{$array[0]['client_information']['email']}}</p>
 <p>{{ __('api.Birth date') }} : {{$array[0]['client_information']['birth_date']}}</p>

@@ -111,7 +111,7 @@ class AuthController extends Controller
 
                 $user->update(['email_verified_at' => Carbon::now()]);
                 $token = $user->createToken('token')->plainTextToken;
-                return redirect(config('app.front_url'));
+                return redirect(config('app.front_url') . '?token=' . urlencode($token));
             }
 
             return $this->apiResponse(__('api.error_code'), null, 'error code', 422);
