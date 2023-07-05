@@ -6,8 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
+      @font-face {
+        font-family: "CustomFont";
+        src: url("../fonts/DINNextLTArabic-Regular-3.ttf") format("truetype");
+      }
       @if(app()->getLocale() == 'ar')
-      
         *{ 
           font-family: 'Droid Arabic Naskh', Arial, sans-serif;
           direction: rtl;
