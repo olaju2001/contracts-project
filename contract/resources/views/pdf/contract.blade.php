@@ -8,7 +8,7 @@
     <style>
       @font-face {
         font-family: "DINNEXTLTArabic";
-        src: url("../fonts/DINNextLTArabic-Regular-3.ttf") format("truetype");
+        src: url("/fonts/DINNextLTArabic-Regular-3.ttf") format("truetype");
       }
       @if(app()->getLocale() == 'ar')
         *{ 
