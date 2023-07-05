@@ -26,6 +26,21 @@ use Illuminate\Support\Facades\File;
 use Barryvdh\DomPDF\Facade\Pdf;
 use ArPHP\I18N\Arabic;
 
+function convertArrayValuesToArabic($array)
+{
+    $arabic = new \ArPHP\I18N\Arabic();
+    
+    foreach ($array as $key => $value) {
+        if (is_array($value)) {
+            $array[$key] = convertArrayValuesToArabic($value);
+        } else {
+            $array[$key] = $arabic->utf8Glyphs($value);
+        }
+    }
+    
+    return $array;
+}
+
 /**
  * @author Ahmed Mohamed
  */
@@ -464,21 +479,20 @@ class ContractController extends Controller
                 $data['is_mosque']                 = $contract->is_mosque;
                 $data['quran_address']                = $contract->quran_address;
 
-
+                $data = convertArrayValuesToArabic($data);
                 $pdf = Pdf::loadView('pdf.contract',['data'=>$data,'array'=>$array]);
                 $pdfContent = $pdf->output();
-                // $pdf->setPaper('A4', 'portrait');
-                // Set the encoding to UTF-8
-                // $pdf->setOptions([
-                //     'isFontSubsettingEnabled' => true,
-                //     'isPhpEnabled' => true,
-                //     'isRemoteEnabled' => true,
-                //     'isJavascriptEnabled' => true,
-                //     'isHtml5ParserEnabled' => true,
-                //     'isCssFloatEnabled' => true,
-                //     'isUnicodeEnabled' => true,
-                //     'defaultFont' => 'arial',
-                // ]);
+                $pdf->setPaper('A4', 'portrait');
+                $pdf->setOptions([
+                    'isFontSubsettingEnabled' => true,
+                    'isPhpEnabled' => true,
+                    'isRemoteEnabled' => true,
+                    'isJavascriptEnabled' => true,
+                    'isHtml5ParserEnabled' => true,
+                    'isCssFloatEnabled' => true,
+                    'isUnicodeEnabled' => true,
+                    'defaultFont' => 'arial',
+                ]);
                 
                 if (ob_get_length() > 0) { ob_end_clean(); }
 
@@ -486,15 +500,8 @@ class ContractController extends Controller
                 // $pdf->save(storage_path().'\app\public\filename.pdf');
 
                 // $contract->addMedia(storage_path().'\app\public\filename.pdf')->toMediaCollection();
-                $arabic = new Arabic();
-                
-                $p = $arabic->arIdentify($pdfContent);
-                for ($i = count($p)-1; $i >= 0; $i-=2) {
-                  $utf8ar = $arabic->utf8Glyphs(substr($pdfContent, $p[$i-1], $p[$i] - $p[$i-1]));
-                  $pdfContent   = substr_replace($pdfContent, $utf8ar, $p[$i-1], $p[$i] - $p[$i-1]);
-                }
-                return $pdf->download('pdfview.pdf', $pdfContent);
-                // return $pdf->download('pdfview.pdf');
+                // return $pdf->download('pdfview.pdf', $pdfContent);
+                return $pdf->download('pdfview.pdf');
 
 
                 // File::delete(storage_path().'\app\public\filename.pdf');
