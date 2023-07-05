@@ -487,11 +487,16 @@ class ContractController extends Controller
 
                 // $contract->addMedia(storage_path().'\app\public\filename.pdf')->toMediaCollection();
                 $arabic = new Arabic();
-                $pdfContent = $arabic->utf8Glyphs($pdfContent);
+                
+                $p = $Arabic->arIdentify($pdfContent);
+                for ($i = count($p)-1; $i >= 0; $i-=2) {
+                  $utf8ar = $Arabic->utf8Glyphs(substr($pdfContent, $p[$i-1], $p[$i] - $p[$i-1]));
+                  $pdfContent   = substr_replace($pdfContent, $utf8ar, $p[$i-1], $p[$i] - $p[$i-1]);
+                }
                 return $pdf->download('pdfview.pdf', $pdfContent);
                 // return $pdf->download('pdfview.pdf');
 
-                
+
                 // File::delete(storage_path().'\app\public\filename.pdf');
 
                 // return [
