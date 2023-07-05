@@ -103,10 +103,10 @@ class AuthController extends Controller
 
         if($data)
         {
-            if($data->pin_code == $code && $data->is_used != 1)
+            $user = $this->userModel->whereId($data->user_id)->with('role')->first();
+            if($data->pin_code == $code && !$user->email_verified_at)
             {
                 // $user=User::find($data->user_id);
-                $user = $this->userModel->whereId($data->user_id)->with('role')->first();
                 $data->update(['is_used' => 1]);
 
                 $user->update(['email_verified_at' => Carbon::now()]);
