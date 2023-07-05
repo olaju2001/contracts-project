@@ -34,8 +34,20 @@ return [
     'your_Contract_Had_been_accepted'=>'تم قبول طلبك بنجاح',
     'your_Contract_Had_been_submitted'=>'تم ارسال طلبك بنجاح',
     'you_already_created_contract_before'=>'لقد قمت بانشاء عقد بالفعل سابقا',
-    'Husband Information'=>'بيانات الزوج'
-
+    'Husband Information' => 'بيانات الزوج',
+    'First Name' => 'الاسم الأول',
+    'Email' => 'البريد الإلكتروني',
+    'Birth date' => 'تاريخ الميلاد',
+    'Birth Place' => 'مكان الميلاد',
+    'nationality' => 'الجنسية',
+    'Marital Status' => 'الحالة الاجتماعية',
+    'Profession' => 'المهنة',
+    'address' => 'العنوان',
+    'Phone Number' => 'رقم الهاتف',
+    'Wife Information' => 'بيانات الزوجة',
+    'First Witness Information' => 'بيانات الشاهد الأول',
+    'Second Witness Information' => 'بيانات الشاهد الثاني',
+    'Agent Information' => 'بيانات الوكيل'
 
 ]
 ;
