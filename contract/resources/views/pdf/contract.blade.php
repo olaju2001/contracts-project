@@ -43,54 +43,52 @@
 <body>
 
   
-    <p class="head">{{ __('api.Husband Information') }}</p>
-    <p> First Name : {{$array[0]['client_information']['first_name']}}</p>
-    <p> Email : {{$array[0]['client_information']['email']}}</p>
-    <p> Birth date : {{$array[0]['client_information']['birth_date']}}</p>
-    <p> Birth Place : {{$array[0]['client_information']['birth_place']}}</p>
-    <p> nationality : {{$array[0]['client_information']['nationality']}}</p>
-    <p> Marital Status : {{$array[0]['client_information']['marital_status']}}</p>
-    <p> Profession : {{$array[0]['client_information']['profession']}}</p>
-    <p> address : {{$array[0]['client_information']['address']}} </p>
-    <p> Phone Number : {{$array[0]['client_information']['phone_number']}}</p>
+  <p class="head">{{ __('api.Husband Information') }}</p>
+<p>{{ __('api.First Name') }} : {{$array[0]['client_information']['first_name']}}</p>
+<p>{{ __('api.Email') }} : {{$array[0]['client_information']['email']}}</p>
+<p>{{ __('api.Birth date') }} : {{$array[0]['client_information']['birth_date']}}</p>
+<p>{{ __('api.Birth Place') }} : {{$array[0]['client_information']['birth_place']}}</p>
+<p>{{ __('api.nationality') }} : {{$array[0]['client_information']['nationality']}}</p>
+<p>{{ __('api.Marital Status') }} : {{$array[0]['client_information']['marital_status']}}</p>
+<p>{{ __('api.Profession') }} : {{$array[0]['client_information']['profession']}}</p>
+<p>{{ __('api.address') }} : {{$array[0]['client_information']['address']}} </p>
+<p>{{ __('api.Phone Number') }} : {{$array[0]['client_information']['phone_number']}}</p>
 
+<hr>
+<p class="head">{{ __('api.Wife Information') }}</p>
+<p>{{ __('api.First Name') }} : {{$array[1]['client_information']['first_name']}}</p>
+<p>{{ __('api.Email') }} : {{$array[1]['client_information']['email']}}</p>
+<p>{{ __('api.Birth date') }} : {{$array[1]['client_information']['birth_date']}}</p>
+<p>{{ __('api.Birth Place') }} : {{$array[1]['client_information']['birth_place']}}</p>
+<p>{{ __('api.nationality') }} : {{$array[1]['client_information']['nationality']}}</p>
+<p>{{ __('api.Marital Status') }} : {{$array[1]['client_information']['marital_status']}}</p>
+<p>{{ __('api.Profession') }} : {{$array[1]['client_information']['profession']}}</p>
+<p>{{ __('api.address') }} : {{$array[1]['client_information']['address']}} </p>
+<p>{{ __('api.Phone Number') }} : {{$array[1]['client_information']['phone_number']}}</p>
 
+<hr>
+<p class="head">{{ __('api.First Witness Information') }}</p>
+<p>{{ __('api.First Name') }} : {{$array[2]['client_information']['first_name']}}</p>
+<p>{{ __('api.Email') }} : {{$array[2]['client_information']['email']}}</p>
+<p>{{ __('api.Birth date') }} : {{$array[2]['client_information']['birth_date']}}</p>
+<p>{{ __('api.Birth Place') }} : {{$array[2]['client_information']['birth_place']}}</p>
+<p>{{ __('api.nationality') }} : {{$array[2]['client_information']['nationality']}}</p>
+<p>{{ __('api.Marital Status') }} : {{$array[2]['client_information']['marital_status']}}</p>
+<p>{{ __('api.Profession') }} : {{$array[2]['client_information']['profession']}}</p>
+<p>{{ __('api.address') }} : {{$array[2]['client_information']['address']}} </p>
+<p>{{ __('api.Phone Number') }} : {{$array[2]['client_information']['phone_number']}}</p>
 
-    <hr>
-    <h5>Wife Information</h5>
-    <p> First Name : {{$array[1]['client_information']['first_name']}}</p>
-    <p> Email : {{$array[1]['client_information']['email']}}</p>
-    <p> Birth date : {{$array[1]['client_information']['birth_date']}}</p>
-    <p> Birth Place : {{$array[1]['client_information']['birth_place']}}</p>
-    <p> nationality : {{$array[1]['client_information']['nationality']}}</p>
-    <p> Marital Status : {{$array[1]['client_information']['marital_status']}}</p>
-    <p> Profession : {{$array[1]['client_information']['profession']}}</p>
-    <p> address : {{$array[1]['client_information']['address']}} </p>
-    <p> Phone Number : {{$array[1]['client_information']['phone_number']}}</p>
-
-    <hr>
-    <h5>First Witness Information</h5>
-    <p> First Name : {{$array[2]['client_information']['first_name']}}</p>
-    <p> Email : {{$array[2]['client_information']['email']}}</p>
-    <p> Birth date : {{$array[2]['client_information']['birth_date']}}</p>
-    <p> Birth Place : {{$array[2]['client_information']['birth_place']}}</p>
-    <p> nationality : {{$array[2]['client_information']['nationality']}}</p>
-    <p> Marital Status : {{$array[2]['client_information']['marital_status']}}</p>
-    <p> Profession : {{$array[2]['client_information']['profession']}}</p>
-    <p> address : {{$array[2]['client_information']['address']}} </p>
-    <p> Phone Number : {{$array[2]['client_information']['phone_number']}}</p>
-
-    <hr>
-    <h5>Second Witness Information</h5>
-    <p> First Name : {{$array[3]['client_information']['first_name']}}</p>
-    <p> Email : {{$array[3]['client_information']['email']}}</p>
-    <p> Birth date : {{$array[3]['client_information']['birth_date']}}</p>
-    <p> Birth Place : {{$array[3]['client_information']['birth_place']}}</p>
-    <p> nationality : {{$array[3]['client_information']['nationality']}}</p>
-    <p> Marital Status : {{$array[3]['client_information']['marital_status']}}</p>
-    <p> Profession : {{$array[3]['client_information']['profession']}}</p>
-    <p> address : {{$array[3]['client_information']['address']}} </p>
-    <p> Phone Number : {{$array[3]['client_information']['phone_number']}}</p>
+<hr>
+<p class="head">{{ __('api.Second Witness Information') }}</p>
+<p>{{ __('api.First Name') }} : {{$array[3]['client_information']['first_name']}}</p>
+<p>{{ __('api.Email') }} : {{$array[3]['client_information']['email']}}</p>
+<p>{{ __('api.Birth date') }} : {{$array[3]['client_information']['birth_date']}}</p>
+<p>{{ __('api.Birth Place') }} : {{$array[3]['client_information']['birth_place']}}</p>
+<p>{{ __('api.nationality') }} : {{$array[3]['client_information']['nationality']}}</p>
+<p>{{ __('api.Marital Status') }} : {{$array[3]['client_information']['marital_status']}}</p>
+<p>{{ __('api.Profession') }} : {{$array[3]['client_information']['profession']}}</p>
+<p>{{ __('api.address') }} : {{$array[3]['client_information']['address']}} </p>
+<p>{{ __('api.Phone Number') }} : {{$array[3]['client_information']['phone_number']}}</p>
 
     <hr>
     <h5>Agent Information</h5>
