@@ -34,8 +34,7 @@ return [
     'your_Contract_Had_been_accepted'=>'تم قبول طلبك بنجاح',
     'your_Contract_Had_been_submitted'=>'تم ارسال طلبك بنجاح',
     'you_already_created_contract_before'=>'لقد قمت بانشاء عقد بالفعل سابقا',
-
-
+    'Husband Information'=>'بيانات الزوج'
 
 
 ]
