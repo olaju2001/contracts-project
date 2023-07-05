@@ -481,7 +481,7 @@ class ContractController extends Controller
                 $data['quran_address']                = $contract->quran_address;
 
                 // $data = convertArrayValuesToArabic($data);
-                $html = view('invoice', compact('data', 'array'))->toArabicHTML();
+                $html = view('pdf.contract', compact('data', 'array'))->toArabicHTML();
 
                 $pdf = PDF::loadHTML($html)->output();
 
