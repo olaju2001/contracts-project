@@ -40,7 +40,7 @@
 
   
     <h5>{{ $texts['Husband Information'] }}</h5>
-    <p> First Name : {{$array[0]['client_information']['first_name']}}</p>
+    <p> الاسم الأول : {{$array[0]['client_information']['first_name']}}</p>
     <p> Email : {{$array[0]['client_information']['email']}}</p>
     <p> Birth date : {{$array[0]['client_information']['birth_date']}}</p>
     <p> Birth Place : {{$array[0]['client_information']['birth_place']}}</p>
