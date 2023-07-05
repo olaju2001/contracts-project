@@ -481,6 +481,8 @@ class ContractController extends Controller
                 $data['quran_address']                = $contract->quran_address;
 
                 $data = convertArrayValuesToArabic($data);
+                dd($data);
+
                 $pdf = Pdf::loadView('pdf.contract',['data'=>$data,'array'=>$array]);
                 $pdfContent = $pdf->output();
                 $pdf->setPaper('A4', 'portrait');

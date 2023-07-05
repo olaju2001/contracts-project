@@ -37,7 +37,9 @@
     </style>
 </head>
 <body>
-    <h5>husband Information</h5>
+
+  
+    <h5>بيانات الزوج</h5>
     <p> First Name : {{$array[0]['client_information']['first_name']}}</p>
     <p> Email : {{$array[0]['client_information']['email']}}</p>
     <p> Birth date : {{$array[0]['client_information']['birth_date']}}</p>
